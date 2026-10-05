@@ -17,7 +17,7 @@ spec:
       template:
         spec:
           containers:
-            - image: batch
+            - image: asia-northeast1-docker.pkg.dev/PROJECT_ID/sbgcrun-app/batch:v1
               name: batch
               resources:
                 limits:
@@ -48,7 +48,6 @@ spec:
                 - "--health-check"
                 - "--http-address=0.0.0.0"
                 - "--http-port=9090"
-                # TODO: 配布時はPROJECT_IDをプレースホルダーにする
                 # フォーマット: <PROJECT_ID>:<REGION>:<INSTANCE_NAME>
                 - "PROJECT_ID:asia-northeast1:sbgcrun-app-instance"
               resources:
